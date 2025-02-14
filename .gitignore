@@ -130,7 +130,7 @@ celerybeat.pid
 # Environments
 .env
 .venv
-env/
+# env/  # I open in it cause there is template
 venv/
 ENV/
 env.bak/
