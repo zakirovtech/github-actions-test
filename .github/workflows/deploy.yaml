@@ -20,5 +20,3 @@ jobs:
             ls -a
             echo "Deploy is completed"
           EOF
-
-        
