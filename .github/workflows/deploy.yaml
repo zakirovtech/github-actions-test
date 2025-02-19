@@ -14,3 +14,5 @@ jobs:
           cd ${{ secrets.PROJECT_REMOTE_PATH }}
           pwd
           ls
+          git pull origin main
+          git log
