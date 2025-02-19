@@ -5,18 +5,11 @@ on:
       - main
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
-      - name: Setup SSH
-        uses: webfactory/ssh-agent@v0.5.3
-        with:
-          ssh-private-key: ${{ secrets.DEPLOY_SSH_KEY }}
-      
-      - name: SSH into the production server and pull changes
+      - name: Pull changes
         run: |
-          ssh -o StrictHostKeyChecking=no user@your-server-ip << 'EOF'
-            cd /home/cornflakes/dev/github-action-test
-            git pull origin main
-            ls -a
-            echo "Deploy is completed"
-          EOF
+          cd ${{ secrets.PROJECT_REMOTE_PATH }}
+          git pull origin main
+          ls
+
